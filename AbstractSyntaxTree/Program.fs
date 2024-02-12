@@ -1,6 +1,4 @@
-﻿// For more information see https://aka.ms/fsharp-console-apps
-
-type ASTNode =
+﻿type ASTNode =
     | Binary of BinaryOperation
     | Constant of int
 
@@ -11,7 +9,7 @@ and BinaryOperation =
     | Divide of (ASTNode * ASTNode)
 
 
-let rec Evaluate (node: ASTNode) : int =
+let Evaluate (node: ASTNode) : int =
     match node with
     | Binary operation -> EvaluateBinaryOperation operation
     | Constant c -> c
